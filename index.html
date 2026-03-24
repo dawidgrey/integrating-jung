@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrating Jung - Complete Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header .subtitle {
+            font-size: 1.5rem;
+            color: #c0c0c0;
+            font-style: italic;
+        }
+        
+        .header .author {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-top: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .chapter-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .chapter-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .chapter-image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2d2d44 0%, #3d3d5c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #808080;
+            font-size: 1rem;
+        }
+        
+        .chapter-info {
+            padding: 1.5rem;
+        }
+        
+        .chapter-number {
+            font-size: 0.9rem;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .chapter-title {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 2px solid #d4af37;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+        
+        .footer .quote {
+            font-style: italic;
+            color: #d0d0d0;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>INTEGRATING JUNG</h1>
+        <div class="subtitle">The Complete Collection</div>
+        <div class="author">by Dean Garrick</div>
+    </div>
+    
+    <div class="container">
+        <div class="intro">
+            <p>
+                A comprehensive guide to 35 Jungian archetypes — from the foundational patterns 
+                that shape consciousness to the shadow forces we'd rather not acknowledge. 
+                Written for people who have better things to do than read twenty volumes of 
+                Swiss psychoanalytic theory.
+            </p>
+        </div>
+        
+        <div class="chapters-grid">
+
+            <div class="chapter-card">
+                <img src="images/00-introduction.jpg" alt="Introduction" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Introduction</div>
+                    <div class="chapter-title">Introduction</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/01-persona.jpg" alt="The Persona" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 1</div>
+                    <div class="chapter-title">The Persona</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/02-shadow.jpg" alt="The Shadow" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 2</div>
+                    <div class="chapter-title">The Shadow</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/03-hero.jpg" alt="The Hero" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 3</div>
+                    <div class="chapter-title">The Hero</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/04-caregiver.jpg" alt="The Caregiver" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 4</div>
+                    <div class="chapter-title">The Caregiver</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/05-sage.jpg" alt="The Sage" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 5</div>
+                    <div class="chapter-title">The Sage</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/06-trickster.jpg" alt="The Trickster" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 6</div>
+                    <div class="chapter-title">The Trickster</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/07-child.jpg" alt="The Child (Puer/Puella Aeternus)" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 7</div>
+                    <div class="chapter-title">The Child (Puer/Puella Aeternus)</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/08-anima-animus.jpg" alt="The Anima and Animus" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 8</div>
+                    <div class="chapter-title">The Anima and Animus</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/09-lover.jpg" alt="The Lover" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 9</div>
+                    <div class="chapter-title">The Lover</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/10-rebel.jpg" alt="The Rebel" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 10</div>
+                    <div class="chapter-title">The Rebel</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/11-ruler.jpg" alt="The Ruler" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 11</div>
+                    <div class="chapter-title">The Ruler</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/12-creator.jpg" alt="The Creator" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 12</div>
+                    <div class="chapter-title">The Creator</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/13-self.jpg" alt="The Self" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 13</div>
+                    <div class="chapter-title">The Self</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/01-puer-aeternus.jpg" alt="The Puer Aeternus" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 14</div>
+                    <div class="chapter-title">The Puer Aeternus</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/02-senex.jpg" alt="The Senex" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 15</div>
+                    <div class="chapter-title">The Senex</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/03-great-mother.jpg" alt="The Great Mother" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 16</div>
+                    <div class="chapter-title">The Great Mother</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/04-wounded-healer.jpg" alt="The Wounded Healer" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 17</div>
+                    <div class="chapter-title">The Wounded Healer</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/05-orphan.jpg" alt="The Orphan" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 18</div>
+                    <div class="chapter-title">The Orphan</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/06-innocent.jpg" alt="The Innocent" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 19</div>
+                    <div class="chapter-title">The Innocent</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/07-magician.jpg" alt="The Magician" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 20</div>
+                    <div class="chapter-title">The Magician</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/08-alchemist.jpg" alt="The Alchemist" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 21</div>
+                    <div class="chapter-title">The Alchemist</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/09-judge.jpg" alt="The Judge" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 22</div>
+                    <div class="chapter-title">The Judge</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/10-everyman.jpg" alt="The Everyman" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 23</div>
+                    <div class="chapter-title">The Everyman</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/01-hermit.jpg" alt="The Hermit" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 24</div>
+                    <div class="chapter-title">The Hermit</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/02-artist-muse.jpg" alt="The Artist / Muse" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 25</div>
+                    <div class="chapter-title">The Artist / Muse</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/03-addict.jpg" alt="The Addict / Possessed One" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 26</div>
+                    <div class="chapter-title">The Addict / Possessed One</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/04-peacemaker.jpg" alt="The Peacemaker" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 27</div>
+                    <div class="chapter-title">The Peacemaker</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/05-devouring-mother.jpg" alt="The Devouring Mother" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 28</div>
+                    <div class="chapter-title">The Devouring Mother</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/06-terrible-father.jpg" alt="The Terrible Father" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 29</div>
+                    <div class="chapter-title">The Terrible Father</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/07-warrior.jpg" alt="The Warrior" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 30</div>
+                    <div class="chapter-title">The Warrior</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/08-explorer.jpg" alt="The Explorer / Seeker" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 31</div>
+                    <div class="chapter-title">The Explorer / Seeker</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/09-martyr.jpg" alt="The Martyr" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 32</div>
+                    <div class="chapter-title">The Martyr</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/10-destroyer.jpg" alt="The Destroyer / Transformer" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 33</div>
+                    <div class="chapter-title">The Destroyer / Transformer</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/11-shapeshifter.jpg" alt="The Shapeshifter" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 34</div>
+                    <div class="chapter-title">The Shapeshifter</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <img src="images/12-visionary.jpg" alt="The Visionary / Prophet" class="chapter-image">
+                <div class="chapter-info">
+                    <div class="chapter-number">Chapter 35</div>
+                    <div class="chapter-title">The Visionary / Prophet</div>
+                </div>
+            </div>
+
+            <div class="chapter-card">
+                <div class="chapter-image-placeholder">Coming Soon</div>
+                <div class="chapter-info">
+                    <div class="chapter-number">Conclusion</div>
+                    <div class="chapter-title">Conclusion</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p class="quote">
+            "Until you make the unconscious conscious, it will direct your life and you will call it fate."<br>
+            — Carl Jung
+        </p>
+        <p style="margin-top: 2rem;">
+            © 2026 Dean Garrick | A comprehensive exploration of Jungian psychology
+        </p>
+    </div>
+</body>
+</html>
